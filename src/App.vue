@@ -2,33 +2,33 @@
   div
     div#app
       div.navigation-bar
-        a(href="#").logo K1-DOG
+        //- a(href="#").logo K1-DOG
         ul.list-items-container
           li(v-for="i in list").navigation-list-item
-            a(v-bind:href="i.link") {{i.title.toUpperCase() }}
+            a(v-bind:href="i.link").title-list {{i.title.toUpperCase() }}
+            a(v-bind:href="i.link").icon-mobile
+              i.fa.fa-2x(v-bind:class="i.icon" aria-hidden="true")
 
 
-      //- carousel.hero-section.parallax
-      //-   slide.parallax
-      //-   slide.parallax
-      div#slider
-        ul#slide-wrap
-          li#slide1.slide.parallax
-          li#slide2.slide.parallax
-          li#slide3.slide.parallax
-          //- li.slide.slide4.parallax
+      div.hero
+        h1  k1-Dog
 
+      //- div.swiper-container
+      //-     //- Additional required wrapper
+      //-     div.swiper-wrapper
+      //-         //- Slides
+      //-         div.swiper-slide.slide01
+      //-         div.swiper-slide.slide02
+      //-         div.swiper-slide.slide03
+      //-
+      //-
+      //-     //- If we need pagination
+      //-     div.swiper-pagination
+      //-
+      //-     //- If we need navigation buttons
+      //-     div.swiper-button-prev
+      //-     div.swiper-button-next
 
-        a#prev(href="#") &#8810;
-        a#next(href="#") &#8811;
-
-        div#sliderNav
-          div.dots.active
-            a(href="#slide1")
-          div.dots
-            a(href="#slide2")
-          div.dots
-            a(href="#slide3")
 
 
       Corsi
@@ -53,19 +53,23 @@ export default {
       list: [
         {
           title: "Corsi & Servizi",
-          link: "#corsi"
+          link: "#corsi",
+          icon: 'fa-graduation-cap'
         },
         {
           title: "Dog Sports",
-          link: "#sports"
+          link: "#sports",
+          icon: "fa-paw"
         },
         {
           title: "Team",
-          link: "#team"
+          link: "#team",
+          icon: "fa-users"
         },
         {
           title: "Contact Us",
-          link: "#contact"
+          link: "#contact",
+          icon: "fa-phone"
         }
       ]
     }

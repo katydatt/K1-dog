@@ -10,37 +10,34 @@ $mustard: #B58F2A;
 $indaco: #ABCACD;
 $white: #ffffff;
 $black: #000000;
-
-// typography
-@import url('https://fonts.googleapis.com/css?family=BioRhyme|Roboto');
-@import url('https://fonts.googleapis.com/css?family=Lato|Lora|Open+Sans');
-// font-family: 'Open Sans', sans-serif;
-// font-family: 'Lato', sans-serif;
-// font-family: 'BioRhyme', serif;
-// font-family: 'Roboto', sans-serif;
+$yellow: #fae596;
+$torquoise: #3fb0ac;
+$dark-torquoise: #173e43;
+$gray: #dddfd4;
 
 html {
   box-sizing: border-box;
   body {
     font-size: 0.9em;
-    font-family: 'Lora', serif;
     margin: 0;
   }
-  // .VueCarousel-slide {
-  //   flex-basis: initial;
-  // }
-  // .VueCarousel-wrapper,
-  // .VueCarousel-inner {
-  //   height: 100%;
-  // }
   h1,
   h2,
   h3 {
     text-align: center;
   }
+
+  h1 {
+    font: 400 100px/1.5 'Pacifico', Helvetica, sans-serif;
+    color: $white;
+    text-shadow: 2px 2px 2px $black;
+  }
+
   h3 {
     font-size: 20px;
     font-weight: bold;
+    color: $dark-torquoise;
+    margin: 0;
   }
   p{
     font-size: 14px;

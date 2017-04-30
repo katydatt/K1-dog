@@ -8,14 +8,48 @@
   }
 
   .course-container {
-    width: 30%;
+    width: 90%;
     height: auto;
-    margin: 15px;
+    margin: 15px auto;
     .img-course {
       height:250px;
-      background-color: $brown;
-      opacity: 0.5;
+      background-color: $yellow;
       display: block;
+      margin: 0 auto;
+    }
+    .text-container {
+      margin: 50px 0;
+      .text {
+        word-wrap: break-word;
+      }
+    }
+  }
+}
+@media(min-width: 768px) {
+  #corsi {
+    width: 95%;
+
+    .course-container{
+      width: 50%;
+      .img-course {
+        display: inline-block;
+        width: 50%;
+
+      }
+      .text-container {
+        display: inline-block;
+        background-color: $background;
+        width: 50%;
+        height: auto;
+        vertical-align: top;
+        h3 {
+          padding: 0 10px;
+        }
+        p {
+          text-align: left;
+          padding: 0 10px;
+        }
+      }
     }
   }
 }

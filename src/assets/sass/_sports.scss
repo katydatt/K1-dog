@@ -1,33 +1,41 @@
 #sports {
   width: 100%;
   margin: 50px auto;
-
   .parallax--sports {
     min-height: 400px;
     background-image: url('./assets/images/dog-agility-camp.jpg');
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
-    background-position: center;
+    // background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
     opacity: 0.8;
-  }
-
-  .all-sports-container {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-  }
-
-  .sport-container {
-    width: 30%;
-    height: auto;
-    margin: 15px;
-    .img-sport {
-      height:250px;
-      background-color: $brown;
-      opacity: 0.5;
-      display: block;
+    h1 {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      width: 100%;
+      font-size: 4em;
+      margin: 0;
     }
   }
+
+  .swiper-container {
+    margin: 80px auto;
+    width: 90%;
+  }
+
+  @media(min-width:768px) {
+    .swiper-slide {
+      width: 48%;
+      margin: 20px;
+      .sport-description {
+        width: 90%;
+        margin: 10px auto;
+      }
+    }
+  }
+
 }

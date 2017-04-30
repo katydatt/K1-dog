@@ -3,10 +3,23 @@
   div#sports
     div.parallax--sports
       h1 Dog Sports
-    div.all-sports-container
-      div(v-for="sport in sports").sport-container
-        h3 {{ sport.name }}
-        p {{ sport.description }}
+
+    //- Slider main container
+    div.swiper-container
+        //- Additional required wrapper
+        div.swiper-wrapper
+            //- Slides
+            div(v-for="sport in sports").swiper-slide
+              h3 {{ sport.name }}
+              p.sport-description {{ sport.description }}
+
+        //- If we need pagination
+        div.swiper-pagination
+
+        //- If we need navigation buttons
+        div.swiper-button-prev
+        div.swiper-button-next
+
 
 </template>
 
