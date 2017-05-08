@@ -1,17 +1,18 @@
 <template lang="pug">
   div
     div#app
-      div.navigation-bar
+      //- div.navigation-bar
         //- a(href="#").logo K1-DOG
-        ul.list-items-container
+         ul.list-items-container
           li(v-for="i in list").navigation-list-item
-            a(v-bind:href="i.link").title-list {{i.title.toUpperCase() }}
+            a(v-bind:href="i.link").title-list {{i.title }}
             a(v-bind:href="i.link").icon-mobile
               i.fa.fa-2x(v-bind:class="i.icon" aria-hidden="true")
 
 
       div.hero
-        h1  k1-Dog
+        img(src="./assets/images/logo.png").logo
+
 
       //- div.swiper-container
       //-     //- Additional required wrapper

@@ -22,6 +22,21 @@
     }
   }
 
+  .swiper-button-next,
+  .swiper-button-prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .swiper-button-prev {
+    left: 0;
+  }
+
+  .swiper-button-next {
+    right: 0;
+  }
+
   .swiper-container {
     margin: 80px auto;
     width: 90%;
@@ -29,11 +44,9 @@
 
   @media(min-width:768px) {
     .swiper-slide {
-      width: 48%;
-      margin: 20px;
       .sport-description {
-        width: 90%;
-        margin: 10px auto;
+        width: 60%;
+        margin: 40px auto;
       }
     }
   }

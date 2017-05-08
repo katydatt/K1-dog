@@ -1,8 +1,8 @@
 <template lang="pug">
 
-  div#sports
+  div#sports.layout-content
     div.parallax--sports
-      h1 Dog Sports
+      h1 Dogs Activities
 
     //- Slider main container
     div.swiper-container
@@ -18,7 +18,10 @@
 
         //- If we need navigation buttons
         div.swiper-button-prev
+          img(src="src/assets/images/carousel-left-white.svg")
+
         div.swiper-button-next
+          img(src="src/assets/images/carousel-right-white.svg")
 
 
 </template>

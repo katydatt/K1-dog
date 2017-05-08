@@ -1,53 +1,69 @@
 #corsi {
-  width: 100%;
-  margin: 50px auto;
-  .all-courses-container {
+
+  .all-courses-wrap {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
   }
 
   .course-container {
-    width: 90%;
+    width: 100%;
     height: auto;
-    margin: 15px auto;
-    .img-course {
-      height:250px;
+    margin: 15px 0;
+    background-color: $white;
+    .img-container {
+      height: 200px;
+      margin: 0 auto;
+      width: 100%;
       background-color: $yellow;
+      // border-radius: 50%;
+      overflow: hidden;
+    }
+    .img-course {
       display: block;
+      height: 100%;
+      width: 100%;
       margin: 0 auto;
     }
     .text-container {
-      margin: 50px 0;
+      margin: 20px auto;
+      width: 90%;
       .text {
         word-wrap: break-word;
       }
     }
   }
 }
-@media(min-width: 768px) {
+@media(min-width: 601px) {
   #corsi {
-    width: 95%;
-
     .course-container{
-      width: 50%;
-      .img-course {
-        display: inline-block;
-        width: 50%;
+      width: 100%;
+      margin: 5% auto;
+      display: flex;
+      .img-container {
+        width: 30%;
+        height: 230px;
+        // border-radius: 50%;
+        overflow: hidden;
 
       }
       .text-container {
-        display: inline-block;
-        background-color: $background;
-        width: 50%;
+        width: 70%;
+        position: relative;
         height: auto;
         vertical-align: top;
         h3 {
-          padding: 0 10px;
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          top: 10%;
         }
         p {
-          text-align: left;
-          padding: 0 10px;
+          position: absolute;
+          top: 30%;
+          width: 85%;
+          left: 50%;
+          transform: translateX(-50%);
         }
       }
     }
