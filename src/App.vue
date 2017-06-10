@@ -8,11 +8,11 @@
             a(v-bind:href="i.link").title-list {{i.title }}
             a(v-bind:href="i.link").icon-mobile
               i.fa.fa-2x(v-bind:class="i.icon" aria-hidden="true")
-
+      div.logo
+        img(src="./assets/images/logo.png").logo-img
 
       div.hero
-        img(src="./assets/images/logo.png").logo
-
+        img(src="./assets/images/campo.jpg").hero-img
 
       //- div.swiper-container
       //-     //- Additional required wrapper

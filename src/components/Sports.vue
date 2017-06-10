@@ -10,7 +10,7 @@
         div.swiper-wrapper
             //- Slides
             div(v-for="sport in sports").swiper-slide
-              h3 {{ sport.name }}
+              h3.title-sport {{ sport.name }}
               p.sport-description {{ sport.description }}
 
         //- If we need pagination

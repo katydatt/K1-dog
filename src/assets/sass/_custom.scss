@@ -1,19 +1,3 @@
-// colours
-$dark-green: #0a402b;
-$background: #ebebe8;
-$brown: #bb8462;
-$button: hsla(82,14%,70%,.5);
-$green: #b6bea8;
-$orange: #E99938;
-$dark-brown: #584632;
-$mustard: #B58F2A;
-$indaco: #ABCACD;
-$white: #ffffff;
-$black: #000000;
-$yellow: #fae596;
-$torquoise: #3fb0ac;
-$dark-torquoise: #173e43;
-$gray: #dddfd4;
 
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Quicksand');
@@ -21,41 +5,43 @@ $gray: #dddfd4;
 html {
   box-sizing: border-box;
   body {
-    font-size: 0.9em;
+    font-size: $base-font-size;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Quicksand', sans-serif;
+    font-family: $font-quicksand;
 
   }
   h1,
   h2,
   h3 {
     text-align: center;
-    font-family: 'Open Sans', sans-serif;
+    font-family: $font-openSans;
   }
 
   h1 {
-    font: 400 100px/1.5 'Pacifico', Helvetica, sans-serif;
+    font: $font-pacifico;
     color: $white;
     text-shadow: 2px 2px 2px $black;
   }
 
   h3 {
-    line-height: 1.3em;
+    line-height: 1.3;
     font-weight: bold;
-    color: #333;
+    color: $mine-shaft;
     margin: 0;
-    font-size: 23px;
+    // font-size: 23px;
+    @include rem(font-size, 23px);
   }
   p{
     font-size: 16px;
-    color: #aaa;
+    color: $silver-chalice;
     font-weight: normal;
 
   }
   a {
     text-decoration: none;
-    font-size: 16px;
+    @include rem(font-size, 16px);
+
 
     &:hover {
       text-decoration: underline;
@@ -63,7 +49,7 @@ html {
   }
 
   .layout-content {
-    margin: 3rem 2rem;
+    margin: 3rem 0.5rem;
     overflow: hidden;
   }
 }

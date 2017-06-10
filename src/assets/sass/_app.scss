@@ -1,106 +1,77 @@
 #app {
-  background-color: #f8f8f8;;
-  // .hero {
-  //   background-image: url('./assets/images/dog-agility-camp.jpg');
-  //   background-attachment: fixed;
-  //   // background-position: center;
-  //   background-repeat: no-repeat;
-  //   background-size: cover;
-  //   position: relative;
-  //   width: 100%;
-  //   margin-top: -65px;
-  //   height: 100vh;
-  // }
-  .hero {
-    height: 150px;
-  }
-  .logo {
-    position: absolute;
-    top: 15%;
-    left:50%;
-    transform: translateX(-50%) translateY(-50%);
-  }
-  .navigation-bar {
-    height: 50px;
-    position: relative;
-    z-index: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-  }
-  a,
-  &:visited  {
-    color: #333;
-  }
-  .list-items-container {
-    padding: 5px;
-    display: flex;
-    margin: 0;
-    .navigation-list-item {
-      list-style-type: none;
-      font-size: 14px;
-      padding: 10px;
-      margin: 10px;
-      .title-list{
-        display: none;
-        color: #333;
-      }
-    }
-  }
-
-  .icon-mobile {
-    color: $dark-torquoise
-  }
-
-  @media(min-width: 768px) {
-    .navigation-bar {
-      a {
-        color: $dark-torquoise;
-      }
-      .logo {
-        margin-left: 20px;
-      }
-      .list-items-container {
-        .navigation-list-item{
-
-          .title-list{
-            display: block;
-          }
-          .icon-mobile {
-            display: none;
-          }
-        }
-      }
-    }
-    .swiper-container {
-      margin-top: 0;
-    }
-  }
-
-  @media screen and (min-width: 768px) {
-    .navigation-bar {
-      justify-content: flex-end;
+  background-color: #f8f8f8;
+}
+.hero {
+  height: 75vh;
+  overflow: hidden;
+  .hero-img {
+    width:100%;
+    @include mq ($from: tablet) {
+      margin-top: -300px;
     }
   }
 }
-//
-// .slide01 {
-//   background-image: url("./assets/images/agility.png");
-// }
-// .slide02 {
-//   background-image: url("./assets/images/labrador.jpg");
-// }
-// .slide03 {
-//   background-image: url("./assets/images/playing-dog.jpg");
-// }
+.logo {
+  text-align: center;
 
-// header images
-.parallax {
-  height: 100vh;
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  @include mq($from: tablet) {
+    width: 50%;
+    margin: 0 auto;
+  }
+  .logo-img {
+    margin: 20px auto;
+    width:100%;
+  }
+}
+.navigation-bar {
+  height: 50px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  @include mq($from: tablet) {
+    justify-content: flex-end;
+  }
+  a,
+  &:visited  {
+    color: $mine-shaft;
+    @include mq($from: tablet) {
+      color: $dark-torquoise;
+    }
+  }
+}
+.list-items-container {
+  padding: 5px;
+  display: flex;
+  margin: 0;
+  .navigation-list-item {
+    list-style-type: none;
+    font-size: 14px;
+    padding: 10px;
+    margin: 10px;
+    .title-list{
+      display: none;
+      color: $mine-shaft;
+      @include mq($from: tablet) {
+        display: block;
+      }
+    }
+    .icon-mobile {
+      @include mq($from: tablet) {
+        display: none;
+      }
+    }
+  }
+}
+
+.icon-mobile {
+  color: $dark-torquoise
+}
+
+.swiper-container {
+  @include mq($from: tablet) {
+    margin-top: 0;
+  }
 }

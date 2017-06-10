@@ -13,9 +13,7 @@
     opacity: 0.8;
     h1 {
       position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translateX(-50%) translateY(-50%);
+      @include center(xy);
       width: 100%;
       font-size: 4em;
       margin: 0;
@@ -25,8 +23,7 @@
   .swiper-button-next,
   .swiper-button-prev {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    @include center(y);
   }
 
   .swiper-button-prev {
@@ -44,9 +41,16 @@
 
   @media(min-width:768px) {
     .swiper-slide {
+      display: flex;
+      align-content: flex-end;
+      flex-direction: column;
+      .title-sport,
       .sport-description {
-        width: 60%;
-        margin: 40px auto;
+        text-align: right;
+        padding-right: 50px;
+      }
+      .sport-description {
+        padding-left: 50%;
       }
     }
   }

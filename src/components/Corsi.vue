@@ -1,9 +1,10 @@
 <template lang="pug">
   div#corsi.layout-content
-    //- h2 I NOSTRI SERVIZI
-    div.all-courses-wrap.layout-content
+    h2.course-header I NOSTRI CORSI.
+
+    div.all-courses-wrap
       div(v-for="corso in corsi").course-container
-        div.img-container
+        div.img-container(v-bind:style="corso")
           img(v-bind:src="corso.image").img-course
         div.text-container
           h3 {{ corso.title }}
@@ -21,7 +22,6 @@
           {
             image: "src/assets/images/dog-sit.jpg",
             title: "Educazione di Base",
-            order:1,
             description: "Questo corso serve ad aiutare il cane ad inserirsi correttamente nella società umana, insegnandogli comandi utili nella vita di tutti i giorni. Apprenderete semplici nozioni al fine di creare una comunicazione efficace e un solido rapporto tra voi e il vostro amico a 4 zampe."
           },
           {
@@ -33,7 +33,6 @@
           {
             image: "src/assets/images/aggressive-dogs.jpg",
             title: "Recupero Comportamentale",
-            order:1,
             description: "Il vostro cane manifesta atteggiamenti di aggressività, fobie, ansie e comportamenti ossessivi o compulsivi? Ogni cane è un caso a sé e va recuperato nel rispetto della sua dignità e della sua indole, insegnandogli una 'strada alternativa' a quella da lui erroneamente intrapresa, portandolo al raggiungimento di un equilibrio."
           },
           {
@@ -45,8 +44,7 @@
           {
             image: "src/assets/images/wedding-dog.jpg",
             title: "Wedding Service",
-            order:1,
-            description: "Vivi il giorno delle tue nozze con il tuo cane.. K1DOG pensa a tutto! Servizio di toilettatura personalizzata; servizio di dog sitter durante tutta la durata del matrimonio; sceglieremo l'abitino e gli accessori per rendere il tuo cane unico; ospiteremo il vostro cane nella nostra pensione sia per la notte delle nozze che per i giorni successivi."
+            description: "Vivi il giorno delle tue nozze con il tuo cane.. KtrueDOG pensa a tutto! Servizio di toilettatura personalizzata; servizio di dog sitter durante tutta la durata del matrimonio; sceglieremo l'abitino e gli accessori per rendere il tuo cane unico; ospiteremo il vostro cane nella nostra pensione sia per la notte delle nozze che per i giorni successivi."
           },
           {
             image: "src/assets/images/campo.jpg",
@@ -57,14 +55,7 @@
         ]
       }
     },
-    methods: {
-      show: function() {
-        var content = document.querySelectorAll('.course-container');
-        for(var i = 0, len = content.length; i < len; i++ ) {
-          console.log(content[i]);
-        }
-      }
-    }
+
   }
 
 </script>
