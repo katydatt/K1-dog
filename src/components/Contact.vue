@@ -1,16 +1,13 @@
 <template lang="pug">
-  div#contact
+    div#contact
+      h2 Drop us a line
+
 </template>
 
 
 <script>
   export default {
-    name: 'Contact',
-    data() {
-      return {
-
-      }
-    }
+    name: 'Contact'
   }
 
 </script>
