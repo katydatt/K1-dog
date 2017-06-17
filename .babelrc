@@ -1,5 +1,6 @@
 {
   "presets": [
+<<<<<<< HEAD
     ["env", { "modules": false }],
     "stage-2"
   ],
@@ -11,4 +12,8 @@
       "plugins": [ "istanbul" ]
     }
   }
+=======
+    ["es2015", { "modules": false }]
+  ]
+>>>>>>> 047045fed76eefbefab836ffdf481640f563e374
 }
