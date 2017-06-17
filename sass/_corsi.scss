@@ -1,0 +1,61 @@
+
+.all-courses-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.course-container {
+  width: 100%;
+  height: auto;
+  margin: 15px 10px;
+  background-color: $white;
+  
+  @include mq($from: tablet) {
+    width: 100%;
+    margin: 5% auto;
+    display: flex;
+  }
+  .img-container {
+    height: 50%;
+    margin: 0 auto;
+    width: 100%;
+    background-color: $yellow;
+    overflow: hidden;
+
+    @include mq($from: tablet) {
+      width: 30%;
+      height: 230px;
+      overflow: hidden;
+    }
+  }
+  .img-course {
+    display: block;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .text-container {
+    margin: 20px auto;
+    width: 90%;
+    position: relative;
+    @include mq($from: tablet) {
+      width: 70%;
+      height: auto;
+      vertical-align: top;
+      .course-title {
+        position: absolute;
+        top: 10%;
+        @include center(x);
+      }
+      .text {
+        position: absolute;
+        top: 30%;
+        width: 85%;
+        word-wrap: break-word;
+        @include center(x);
+      }
+    }
+  }
+}
