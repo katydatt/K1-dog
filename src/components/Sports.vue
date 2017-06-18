@@ -1,25 +1,25 @@
 <template lang='pug'>
-    div#sports.layout-content
-      div.parallax--sports
-        h1 Dogs Activities
+    div#sports
+      div.parallax
+        h1.title Dogs Activities
 
             //- Slider main container
-      //- div.swiper-container(ref='slider')
-      //-   //- Additional required wrapper
-      //-   div.swiper-wrapper
-      //-     //- Slides
-      //-     div(v-for='sport in sports').swiper-slide
-      //-         h3.title-sport {{ sport.name }}
-      //-         p.sport-description {{ sport.description }}
-      //-
-      //-     //- If we need pagination
-      //-     div.swiper-pagination
-      //-       //- If we need navigation buttons
-      //-       div.swiper-button-prev
-      //-         img(src='src/assets/images/carousel-left-white.svg')
-      //-
-      //-       div.swiper-button-next
-      //-         img(src='src/assets/images/carousel-right-white.svg')
+      div.swiper-container.layout-content(ref='slider')
+        //- Additional required wrapper
+        div.swiper-wrapper
+          //- Slides
+          div(v-for='sport in sports').swiper-slide
+              h3.title-sport {{ sport.name }}
+              p.sport-description {{ sport.description }}
+
+          //- If we need pagination
+          div.swiper-pagination
+            //- If we need navigation buttons
+            div.swiper-button-prev
+              img(src='src/assets/images/carousel-left-white.svg')
+
+            div.swiper-button-next
+              img(src='src/assets/images/carousel-right-white.svg')
 </template>
 
 
@@ -64,38 +64,102 @@ export default {
     }
   },
   mounted () {
-    // this.createSlider()
+    this.createSlider()
   },
   methods: {
-    // createSlider () {
-    //   if (!this.slider) {
-    //     this.slider = new Swiper(this.$refs.slider, {
-    //       // Optional parameters
-    //       direction: 'horizontal',
-    //       loop: false,
-    //       speed: 500,
-    //       slidesPerview: 'auto',
-    //       //  centeredSlides: true,
-    //       spaceBetween: 20,
-    //       // If we need pagination
-    //       //  pagination: '.swiper-pagination',
-    //       //  paginationType: 'progress',
-    //
-    //       // Navigation arrows
-    //       nextButton: '.swiper-button-next',
-    //       prevButton: '.swiper-button-prev'
-    //     })
-    //   }
-    // },
-    // destroySlider () {
-    //   if (this.slider) {
-    //     this.slider.destroy(true, true)
-    //   }
-    // }
+    createSlider () {
+      if (!this.slider) {
+        this.slider = new Swiper(this.$refs.slider, {
+          // Optional parameters
+          direction: 'horizontal',
+          loop: false,
+          speed: 500,
+          slidesPerview: 'auto',
+          //  centeredSlides: true,
+          spaceBetween: 20,
+          // If we need pagination
+          //  pagination: '.swiper-pagination',
+          //  paginationType: 'progress',
+
+          // Navigation arrows
+          nextButton: '.swiper-button-next',
+          prevButton: '.swiper-button-prev'
+        })
+      }
+    },
+    destroySlider () {
+      if (this.slider) {
+        this.slider.destroy(true, true)
+      }
+    }
   }
 }
 
 </script>
 
-<style lang='scss'>
+<style lang='scss' scoped>
+@import '../assets/sass/_vars.scss';
+@import '../assets/sass/_helpers.scss';
+@import '../assets/sass/_custom.scss';
+@import '../assets/sass/_swiper.scss';
+
+
+.layout-content {
+  width: 100%;
+  margin: 50px auto;
+}
+.parallax {
+  min-height: 400px;
+  background-image: url('../assets/images/dog-agility-camp.jpg');
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  // background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  opacity: 0.8;
+  .title {
+    position: absolute;
+    @include center(xy);
+    width: 100%;
+    font-size: 4em;
+    margin: 0;
+  }
+
+
+  // .swiper-button-next,
+  // .swiper-button-prev {
+  //   position: absolute;
+  //   @include center(y);
+  // }
+  //
+  // .swiper-button-prev {
+  //   left: 0;
+  // }
+  //
+  // .swiper-button-next {
+  //   right: 0;
+  // }
+  //
+  // .swiper-container {
+  //   margin: 80px auto;
+  //   width: 90%;
+  // }
+}
+@include mq($from: tablet) {
+  // .swiper-slide {
+  //   display: flex;
+  //   align-content: flex-end;
+  //   flex-direction: column;
+  //   .title-sport,
+  //   .sport-description {
+  //     text-align: right;
+  //     padding-right: 50px;
+  //   }
+  //   .sport-description {
+  //     padding-left: 50%;
+  //   }
+  // }
+}
+
 </style>
