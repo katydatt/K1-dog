@@ -1,4 +1,4 @@
-<template lang='pug'>
+<template lang="pug">
     div#courses.courses-template.layout-content
       h2.course-header I NOSTRI CORSI
 

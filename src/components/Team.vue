@@ -1,4 +1,4 @@
-<template lang='pug'>
+<template lang="pug">
     div#team.layout-content
       h2.title Il nostro Team
       div.instructor
