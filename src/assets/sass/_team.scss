@@ -1,0 +1,21 @@
+@media screen and (min-width: 768px) {
+    .instructor {
+        display: inline-block;
+        width: 50%;
+        vertical-align: top;
+        text-align: center;
+        .name{
+            margin-bottom: 20px;
+        }
+        img {
+            border-radius: 50%;
+            background-color: $dark-green;
+            width: 200px;
+            height: 200px;
+        }
+        .description {
+            width: 80%;
+            margin: 50px auto;
+        }
+    }
+}
