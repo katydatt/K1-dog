@@ -1,25 +1,24 @@
 <template lang="pug">
     div#sports
-      div.parallax
-        h1.title Dogs Activities
-
+        div.parallax
+            h1.title Dogs Activities
             //- Slider main container
-      div.swiper-container.layout-content(ref='slider')
-        //- Additional required wrapper
-        div.swiper-wrapper
-          //- Slides
-          div(v-for='sport in sports').swiper-slide
-              h3.title-sport {{ sport.name }}
-              p.sport-description {{ sport.description }}
+        div.swiper-container.center-content(ref='slider')
+            //- Additional required wrapper
+            div.swiper-wrapper
+                //- Slides
+                div(v-for='sport in sports').swiper-slide
+                    h3.title-sport {{ sport.name }}
+                    p.sport-description {{ sport.description }}
 
-          //- If we need pagination
-          div.swiper-pagination
-            //- If we need navigation buttons
+            //- If we need pagination
+            div.swiper-pagination
+                //- If we need navigation buttons
             div.swiper-button-prev
-              img(src='../assets/images/carousel-left-white.svg')
+                img(src='../assets/images/carousel-left-white.svg')
 
             div.swiper-button-next
-              img(src='../assets/images/carousel-right-white.svg')
+                img(src='../assets/images/carousel-right-white.svg')
 </template>
 
 <script>
@@ -75,7 +74,7 @@ export default {
                     loop: false,
                     speed: 500,
                     slidesPerview: 'auto',
-                    //  centeredSlides: true,
+                    centeredSlides: true,
                     spaceBetween: 20,
                     // If we need pagination
                     //  pagination: '.swiper-pagination',
@@ -102,9 +101,10 @@ export default {
 @import '../assets/sass/_vars.scss';
 @import '../assets/sass/_helpers.scss';
 @import '../assets/sass/_custom.scss';
+@import '../assets/sass/_swiper.scss';
 
 
-.layout-content {
+.center-content {
     width: 100%;
     margin: 50px auto;
 }
@@ -118,46 +118,54 @@ export default {
     background-size: cover;
     position: relative;
     opacity: 0.8;
-    .title {
-        position: absolute;
-        @include center(xy);
-        width: 100%;
-        font-size: 4em;
-        margin: 0;
-    }
-    .swiper-button-next,
-    .swiper-button-prev {
-     position: absolute;
-     @include center(y);
-    }
-
-    .swiper-button-prev {
-     left: 0;
-    }
-
-    .swiper-button-next {
-     right: 0;
-    }
-
-    .swiper-container {
-     margin: 80px auto;
-     width: 90%;
+}
+.title {
+    position: absolute;
+    @include center(xy);
+    width: 100%;
+    font-size: 4em;
+    margin: 0;
+}
+.title-sport {
+    @include mq($from: tablet) {
+        text-align: right;
+        padding-right: 50px;
     }
 }
-@include mq($from: tablet) {
-    .swiper-slide {
+.sport-description {
+    padding: 0 25px;
+    @include mq($from: tablet) {
+        text-align: right;
+        width: 50%;
+        margin-left: 40%;
+    }
+}
+
+// Swiper adjustment
+.swiper-button-next,
+.swiper-button-prev {
+    position: absolute;
+    @include center(y);
+}
+
+.swiper-button-prev {
+    left: 0;
+}
+
+.swiper-button-next {
+    right: 0;
+}
+
+.swiper-container {
+    margin: 80px auto;
+    width: 90%;
+}
+
+.swiper-slide {
+    @include mq($from: tablet) {
         display: flex;
         align-content: flex-end;
         flex-direction: column;
-
-        .title-sport,
-        .sport-description {
-            text-align: right;
-            padding-right: 50px;
-        }
-        .sport-description {
-            padding-left: 50%;
-        }
     }
 }
 

@@ -54,22 +54,24 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import './assets/sass/main.scss';
+@import './assets/sass/main.scss';
 
-  #app {
+#app {
     background-color: #f8f8f8;
-  }
-  .hero {
-    height: 75vh;
+}
+.hero {
+    @include mq($from: tablet) {
+        height: 75vh;
+    }
     overflow: hidden;
     .hero-img {
-      width:100%;
-      @include mq ($from: tablet) {
-        margin-top: -300px;
-      }
+        width:100%;
+        @include mq ($from: tablet) {
+            margin-top: -300px;
+        }
     }
-  }
-  .logo {
+}
+.logo {
     text-align: center;
 
     @include mq($from: tablet) {
@@ -80,8 +82,8 @@ export default {
       margin: 20px auto;
       width:100%;
     }
-  }
-  .navigation-bar {
+}
+.navigation-bar {
     height: 50px;
     position: relative;
     z-index: 2;
@@ -90,49 +92,48 @@ export default {
     align-items: center;
     margin: 0;
     @include mq($from: tablet) {
-      justify-content: flex-end;
+        justify-content: flex-end;
     }
     a,
     &:visited  {
-      color: $mine-shaft;
-      @include mq($from: tablet) {
-        color: $dark-torquoise;
-      }
+        color: $mine-shaft;
+        @include mq($from: tablet) {
+            color: $dark-torquoise;
+        }
     }
-  }
-  .list-items-container {
+}
+.list-items-container {
     padding: 5px;
     display: flex;
     margin: 0;
     .navigation-list-item {
-      list-style-type: none;
-      font-size: 14px;
-      padding: 10px;
-      margin: 10px;
-      .title-list{
-        display: none;
-        color: $mine-shaft;
-        @include mq($from: tablet) {
-          display: block;
+        list-style-type: none;
+        font-size: 14px;
+        padding: 10px;
+        margin: 10px;
+        .title-list{
+            display: none;
+            color: $mine-shaft;
+            @include mq($from: tablet) {
+                display: block;
+            }
         }
-      }
-      .icon-mobile {
-        @include mq($from: tablet) {
-          display: none;
+        .icon-mobile {
+            @include mq($from: tablet) {
+                display: none;
+            }
         }
-      }
     }
-  }
+}
 
-  .icon-mobile {
+.icon-mobile {
     color: $dark-torquoise
-  }
+}
 
-  .swiper-container {
+.swiper-container {
     @include mq($from: tablet) {
-      margin-top: 0;
+        margin-top: 0;
     }
-  }
-
+}
 
 </style>
