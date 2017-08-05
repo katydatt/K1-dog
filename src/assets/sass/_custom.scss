@@ -39,13 +39,7 @@ html {
 
     }
     a {
-        text-decoration: none;
         @include rem(font-size, 16px);
-
-
-        &:hover {
-            text-decoration: underline;
-        }
     }
 
     .layout-content {
