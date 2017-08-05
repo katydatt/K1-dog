@@ -6,7 +6,7 @@ export const scrollMixin = {
         }
     },
     mounted () {
-        this.courseContainers = document.querySelectorAll('.course-container')
+        this.courseContainers = document.querySelectorAll('.container')
         this.bindEvents()
     },
     methods: {
